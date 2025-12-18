@@ -1,0 +1,70 @@
+/* src/shop/styles/ProductGrid.css */
+
+.product-grid {
+    display: grid;
+    /* Increased min-width for better visibility on mobile */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 40px 24px; /* More vertical space for titles/prices */
+    padding: 20px;
+}
+
+/* --- Product Card Styling --- */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image Container with Fixed Aspect Ratio */
+.product-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Standard fashion e-commerce ratio */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures white shirts don't get cropped */
+    mix-blend-mode: multiply; /* Helps blend white backgrounds */
+}
+
+/* --- Enhanced States --- */
+.product-grid-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+/* Modern Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.product-grid-error {
+    color: #d32f2f;
+    background: #ffebee;
+    border-radius: 8px;
+    margin: 20px;
+}

@@ -1,0 +1,125 @@
+/* src/shop/styles/NavBar.css (FINALIZED - Includes Fixes for Fixed Position) */
+
+/* ---------------------------------------------------- */
+/* 1. NAVBAR STRUCTURE AND FIXED POSITIONING            */
+/* ---------------------------------------------------- */
+
+.navbarContainer {
+    /* Fixed position to keep it at the top */
+    position: fixed !important; /* 🛑 FORCE FIX: Ensures it stays fixed to viewport */
+    top: 0 !important;          /* Ensures it stays at the very top */
+    left: 0;
+    width: 100% !important;     /* Ensures it spans the full width */
+    height: 70px; 
+    z-index: 99999;             /* Very high Z-index to always be on top */
+    background-color: black;
+    color: white;
+    border-bottom: 1px solid #333;
+    
+    /* Must be relative to contain the absolute search bar */
+    position: relative; 
+    
+    /* Resetting common properties that break 'position: fixed' */
+    transform: none !important;
+}
+
+.mainNavRow {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    max-width: 100%;
+    margin: 0 auto;
+    
+    /* Adjusted padding to fit content within the 70px height */
+    padding: 0 20px; 
+    height: 100%; 
+}
+
+/* Left Icon Group */
+.navLeftIcons {
+    display: flex;
+    align-items: center;
+    flex: 1; 
+}
+
+/* Logo (Center) */
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    text-align: center; 
+    flex: 1; 
+    transition: opacity 0.3s;
+}
+
+/* Style to hide the logo when the search is active */
+.logo.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Right Icon Group (Search, Account, Cart) */
+.navRightIcons {
+    display: flex;
+    align-items: center; 
+    gap: 25px; 
+    flex: 1; 
+    justify-content: flex-end; 
+}
+
+/* General Icon Styling */
+.navIcon {
+    cursor: pointer;
+    font-size: 22px;
+    display: block; 
+    transition: color 0.2s;
+}
+
+/* ---------------------------------------------------- */
+/* 2. INLINE SEARCH BAR STYLES (Slide-In Effect)        */
+/* ---------------------------------------------------- */
+
+.inlineSearchWrapper {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    
+    width: 0; 
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.4s ease-out, opacity 0.3s ease-out;
+    pointer-events: none; 
+    z-index: 1001; 
+}
+
+/* Active state: Slides into view */
+.inlineSearchWrapper.active {
+    width: 90%; 
+    max-width: 800px;
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+/* Style the SearchBar component form inside the wrapper */
+.inlineSearchWrapper .search-bar-form {
+    width: 100%;
+    border: 1px solid white; 
+    background-color: black; 
+    border-radius: 0; 
+    height: 50px; 
+    padding: 0 15px; 
+}
+
+.inlineSearchWrapper .search-input {
+    color: white; 
+    background-color: black;
+    padding: 0;
+}
+
+.inlineSearchWrapper .search-button {
+    color: white; 
+    padding: 0 5px; 
+}

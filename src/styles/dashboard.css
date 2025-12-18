@@ -1,0 +1,144 @@
+/* Base layout */
+.app-layout {
+display: flex;
+min-height: 100vh;
+background: #f7fafc;
+color: #1f2937;
+font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.app-sidebar {
+width: 240px;
+background: #ffffff;
+border-right: 1px solid #e6eef8;
+padding: 18px;
+box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+display: flex;
+flex-direction: column;
+transition: width 0.2s ease;
+}
+.app-sidebar.collapsed { width: 72px; }
+.sidebar-top { display:flex; align-items:center; justify-content:space-between; }
+.sidebar-brand { display:flex; align-items:center; gap:12px; }
+.brand-logo { width:44px; height:44px; border-radius:10px; background:#f2f6ff; display:flex; align-items:center; justify-content:center; font-weight:700; color:#0d47a1; }
+.collapse-btn { background:transparent; border:none; cursor:pointer; font-size:16px; color:#0d47a1; }
+.sidebar-nav { margin-top:20px; display:flex; flex-direction:column; gap:8px; }
+.sidebar-link { display:flex; gap:12px; align-items:center; padding:10px; border-radius:10px; text-decoration:none; color:#344054; }
+.sidebar-link .icon { width:28px; text-align:center; }
+.sidebar-link.active, .sidebar-link:hover { background:#eaf2ff; color:#0d47a1; }
+
+/* Topbar */
+.app-main { flex:1; display:flex; flex-direction:column; }
+.app-topbar { display:flex; align-items:center; justify-content:space-between; padding:18px 24px; background:transparent; border-bottom:1px solid #eef2f7; }
+.topbar-title { margin:0; font-size:20px; color:#0d47a1; }
+.topbar-actions { display:flex; gap:12px; align-items:center; }
+.search input { padding:8px 12px; border-radius:10px; border:1px solid #cbd5e1; background:#f8fafc; }
+.user { display:flex; gap:8px; align-items:center; }
+.avatar { width:36px; height:36px; border-radius:50%; background:#0d47a1; color:white; display:flex; align-items:center; justify-content:center; font-weight:700; }
+.username { font-weight:600; color:#344054; }
+
+/* Content */
+.app-content { padding:22px; }
+
+/* Cards */
+.card { background:white; padding:18px; border-radius:12px; box-shadow: 0 6px 20px rgba(12,40,80,0.04); margin-bottom:18px; }
+.stat-card { padding:18px; display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
+.stat-value { font-size:20px; font-weight:700; color:#0d47a1; }
+.stat-label { color:#64748b; }
+
+/* Layout helpers */
+.stats-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:18px; margin-bottom:18px; }
+.grid-2 { display:grid; grid-template-columns: 1fr 360px; gap:18px; }
+
+/* Tables & lists */
+.table { width:100%; border-collapse:collapse; }
+.table th, .table td { text-align:left; padding:10px 8px; border-bottom:1px solid #f1f5f9; }
+.simple-list { list-style:none; padding-left:0; }
+.simple-list li { padding:8px 0; border-bottom:1px dashed #eef2f7; }
+
+/* Form grid */
+.form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; align-items:center; }
+.form-grid input { padding:10px; border-radius:8px; border:1px solid #e6eef8; background:#fbfdff; }
+
+/* Buttons */
+.btn { background:#1565c0; color:white; padding:10px 14px; border-radius:10px; border:none; cursor:pointer; font-weight:600; }
+.btn.small { padding:6px 8px; font-size:13px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+.stats-grid { grid-template-columns: repeat(2, 1fr); }
+.grid-2 { grid-template-columns: 1fr; }
+.app-sidebar { position:fixed; z-index:30; height:100vh; transform:translateX(0); left:0; top:0; }
+.app-sidebar.collapsed { transform:translateX(-100%); }
+}
+@media (max-width: 520px) {
+.stats-grid { grid-template-columns: 1fr; }
+.app-sidebar { display:none; }
+.app-topbar { padding:12px; }
+}
+
+
+/* Scoped form for AddProduct page */
+.add-product-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.add-product-form input,
+.add-product-form textarea,
+.add-product-form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.add-product-form input:focus,
+.add-product-form textarea:focus,
+.add-product-form select:focus {
+  outline: none;
+  border-color: #1565c0;
+  box-shadow: 0 0 0 2px rgba(21, 101, 192, 0.2);
+}
+
+.add-product-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.add-product-form input[type="file"] {
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.add-product-form button.btn {
+  grid-column: span 2;
+  justify-self: start;
+  transition: background 0.3s ease;
+}
+
+.add-product-form button.btn:hover {
+  background: #0d47a1;
+}
+
+.add-product-form p.error-message {
+  grid-column: span 2;
+  color: #d32f2f;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .add-product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .add-product-form button.btn {
+    width: 100%;
+  }
+}

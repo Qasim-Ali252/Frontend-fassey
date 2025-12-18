@@ -1,0 +1,103 @@
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 85vh; /* Takes up most of the viewport height */
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-text-overlay {
+    position: absolute;
+    bottom: 50px;
+    padding: 20px;
+}
+
+.hero-main-text {
+    font-size: 4em;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.hero-sub-text {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+/* --- Category Grid Section (3 Columns) --- */
+.category-grid-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.category-grid-item {
+    position: relative;
+    flex: 1 1 33.33%; /* Creates 3 equal columns */
+    min-height: 400px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+}
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.category-grid-item:hover .grid-image {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.grid-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4); 
+    text-align: center;
+}
+
+.grid-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Latest Trends/Newsletter Section --- */
+.latest-trends {
+    padding: 80px 20px;
+    text-align: center;
+    /* 🛑 Change background-color to a very light gray */
+    background-color: lightgray; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .category-grid-item {
+        flex: 1 1 50%; /* 2 columns on tablet */
+    }
+    .hero-main-text {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid-item {
+        flex: 1 1 100%; /* 1 column on mobile */
+    }
+}

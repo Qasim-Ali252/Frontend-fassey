@@ -1,0 +1,66 @@
+.product-filter-sidebar {
+    padding-top: 10px;
+}
+
+.filter-heading {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.gender-group {
+    margin-bottom: 15px;
+}
+
+.gender-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.gender-title:hover {
+    color: #000;
+}
+
+.gender-title.is-active {
+    color: #d9534f; /* Highlight color for active gender */
+}
+
+.category-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.category-list.is-expanded {
+    max-height: 200px; /* Sufficient height to show all categories */
+    transition: max-height 0.4s ease-in;
+}
+
+.category-item {
+    padding: 8px 0 8px 15px;
+    font-size: 0.95rem;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.category-item:hover {
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+.category-item.is-selected {
+    color: #d9534f; /* Highlight color for active category */
+    font-weight: 600;
+    background-color: #f0f0f0;
+}

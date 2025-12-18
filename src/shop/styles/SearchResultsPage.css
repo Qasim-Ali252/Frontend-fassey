@@ -1,0 +1,44 @@
+/* src/shop/styles/SearchResultsPage.css */
+
+.search-results-container {
+    max-width: 1200px;
+    margin: 80px auto 100px;
+    padding: 0 20px 40px;
+}
+
+.search-results-container h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.result-count {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #777;
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 26px;
+}
+
+.no-results-state, .no-query-state {
+    text-align: center;
+    padding: 60px;
+    background: #fff;
+    border: 1px dashed #ddd;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.no-results-state p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 20px;
+}

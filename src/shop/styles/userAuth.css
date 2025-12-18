@@ -1,0 +1,122 @@
+/* ================================
+   Global Auth Layout
+=================================== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================================
+   Auth Box
+=================================== */
+.auth-box {
+  background: #ffffff;
+  padding: 40px 45px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.05);
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
+}
+
+/* Smooth Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   Heading
+=================================== */
+.auth-box h2 {
+  color: black;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+/* ================================
+   Form Inputs
+=================================== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-form input {
+  padding: 14px 16px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: black;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15);
+  outline: none;
+}
+
+/* ================================
+   Button
+=================================== */
+.btn {
+  background-color: black;
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background-color: grey;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Bottom Text (Login/Signup Link)
+=================================== */
+.auth-text {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #525252;
+}
+
+.auth-text a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.auth-text a:hover {
+  text-decoration: underline;
+  color: #0d47a1;
+}
+
+/* ================================
+   Responsive Design
+=================================== */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 28px 25px;
+    border-radius: 14px;
+  }
+
+  .auth-box h2 {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,238 @@
+/* src/styles/Sidebar.css */
+
+/* === CORE CONTAINER === */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1000; 
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* MODIFIED: Increased width from 300px to 350px */
+    max-width: 350px; 
+    height: 100vh;
+    background: white;
+    z-index: 1001; 
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%); /* Start off-screen */
+    transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column; /* Key to pushing footer to the bottom */
+}
+
+.sidebar.is-open {
+    transform: translateX(0); /* Slide in */
+}
+
+/* === HEADER === */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    background: #f8f8f8;
+    position: relative;
+    flex-shrink: 0; /* Important: prevents header from shrinking */
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.back-btn-placeholder {
+    width: 30px; 
+    text-align: left;
+}
+
+.back-icon, .close-icon {
+    font-size: 1.8rem;
+    color: #555;
+    cursor: pointer;
+    display: block;
+}
+.back-icon:hover, .close-icon:hover {
+    color: #000;
+}
+
+/* === CONTENT WRAPPER (SLIDING MECHANISM) === */
+.sidebar-content-wrapper {
+    flex-grow: 1; /* Pushes content wrapper to fill space, pushing button down */
+    display: flex;
+    width: 200%; /* Contains two panels (Main Menu + Sub Menu) */
+    overflow-x: hidden; 
+    transition: transform 0.3s ease-out;
+}
+
+/* Default state: Show Main Menu */
+.sidebar-content-wrapper {
+    transform: translateX(0);
+}
+
+/* State 1: Show Sub Menu */
+.sidebar-content-wrapper.level-1 {
+    transform: translateX(-50%);
+}
+
+/* MENU PANELS */
+.menu-panel {
+    flex-shrink: 0;
+    width: 50%; 
+    overflow-y: auto; /* Allows menu content to scroll independently */
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.main-menu, .sub-menu-list {
+    padding: 10px 0;
+    list-style: none;
+}
+
+/* Menu Items (General Styling) */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; 
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    border-bottom: 1px solid #fafafa;
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-item a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 12px 0; 
+}
+
+.menu-arrow {
+    font-size: 1.2rem;
+    color: #999;
+    flex-shrink: 0;
+}
+
+.sub-menu-item {
+    display: block;
+    padding: 12px 35px; 
+    color: #555;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.sub-menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Explicit back row inside sub menu for better UX */
+.sub-menu-back-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background: #f8f8f8;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+
+.sub-menu-back-row:hover {
+    background: #f0f0f0;
+}
+
+.sub-menu-back-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* --- Auth Links --- */
+.auth-section-divider {
+    height: 1px;
+    background: #eee;
+    margin: 10px 20px;
+}
+
+.menu-item.auth-link a, .menu-item.auth-link {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item .menu-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* --- STATIC FOOTER ACTIONS (Login/Logout Buttons) --- */
+.sidebar-footer-actions {
+    /* Ensures the button area is fixed at the bottom */
+    flex-shrink: 0; 
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Base style for both static buttons */
+.static-auth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 15px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Icon style inheritance */
+.static-auth-btn .menu-icon {
+    font-size: 1.3rem;
+    margin-right: 10px;
+    color: inherit;
+}
+
+/* 1. LOGOUT BUTTON STYLING (Authenticated) */
+.static-logout-btn {
+    color: #c9302c; /* Red color for emphasis */
+    background-color: #f8f8f8;
+}
+
+.static-logout-btn:hover {
+    background-color: #fcebeb; 
+    color: #a01a18;
+}
+
+/* 2. LOGIN/REGISTER BUTTON STYLING (Unauthenticated) */
+.static-login-btn {
+    color: #0f0f0f; /* Strong black color */
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.static-login-btn:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}

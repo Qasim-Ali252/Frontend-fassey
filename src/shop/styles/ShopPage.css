@@ -1,0 +1,36 @@
+/* src/styles/ShopPage.css */
+
+.shop-page-wrapper {
+  max-width: 1400px;
+  /* Fixed Spacing: Reduced margin to 30px to align content perfectly with Navbar */
+  margin: 30px auto 80px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Old breadcrumb styles removed - now using Breadcrumb component */
+
+.shop-page-main {
+  width: 100%;
+  /* Smooth entrance animation to make loading feel intentional */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Professional Grid Spacing */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px 20px; 
+}
+
+/* Visibility Fix for White/Sky Blue items */
+.product-card-image-wrapper {
+  background-color: #f9f9f9; /* Contrast background for white garments */
+  aspect-ratio: 4 / 5;
+  mix-blend-mode: multiply; /* Blends images seamlessly */
+}

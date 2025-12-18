@@ -1,0 +1,46 @@
+/* src/styles/Layout.css (FINALIZED - Gap Removal + Footer Fix) */
+
+.shop-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    
+    /* 🛑 CRITICAL FIX FOR FIXED NAVBAR: 
+       We must ensure the parent doesn't break the 'fixed' positioning.
+       These properties, if set in a parent, break position:fixed.
+    */
+    transform: none !important;
+    perspective: none !important;
+    filter: none !important;
+}
+
+/* --- Full-Screen Content Container (for all pages) --- */
+.shop-main-full {
+    width: 100%; 
+    padding: 0; 
+    margin: 0;
+    
+    /* 🛑 THE FIX FOR WHITE SPACE: Pushes content down by 70px */
+    padding-top: 70px !important; 
+}
+
+/* 🛑 FOOTER FIX: Ensure content takes available space and footer stays at bottom */
+.shop-main-min-height {
+    flex: 1 0 auto; /* Grow to fill available space, don't shrink, auto basis */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure footer stays at bottom */
+.shop-wrapper > footer {
+    margin-top: auto; /* Push footer to bottom */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* For pages with minimal content, ensure they still take full height */
+.shop-main-full > * {
+    min-height: calc(100vh - 70px - 200px); /* Subtract navbar height and approximate footer height */
+}

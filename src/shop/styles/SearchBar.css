@@ -1,0 +1,56 @@
+/* src/shop/styles/SearchBar.css */
+
+.search-bar-form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 6px 12px;
+    background-color: #f8f8f8;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.search-bar-form:focus-within {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px #000;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+    flex-grow: 1;
+    font-size: 0.95rem;
+    background-color: transparent;
+    color: #222;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background-color: #111;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.search-button:hover {
+    background-color: #000;
+    transform: translateY(-1px);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}

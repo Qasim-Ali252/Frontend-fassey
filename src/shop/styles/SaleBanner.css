@@ -1,0 +1,71 @@
+.sale-banner-container {
+    /* Deep red background color */
+    background-color: #900; 
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    /* White borders above and below the banner */
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+
+.sale-content {
+    max-width: 800px;
+    margin: 0 auto;
+    /* Thin white border around the content group */
+    border: 1px solid white; 
+    padding: 40px 20px;
+}
+
+.end-of-season {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.flat-off-group {
+    /* White horizontal lines surrounding the "FLAT 50% OFF" text */
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.flat-text {
+    display: block;
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.percent-off {
+    display: block;
+    font-size: 6em;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.on-everything {
+    display: block;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.men-women-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.2s;
+}
+
+.men-women-links a:hover {
+    color: #eee;
+}
