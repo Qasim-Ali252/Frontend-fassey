@@ -6,7 +6,7 @@ const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const menu = [
-    { to: "/dashboard", label: "Dashboard", icon: "🏠" },
+    { to: "/admin", label: "Dashboard", icon: "🏠" },
     { to: "/products", label: "Products", icon: "👖" },
     { to: "/products/add", label: "Add Product", icon: "➕" },
     { to: "/products/categories", label: "Categories", icon: "🗂️" },

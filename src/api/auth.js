@@ -1,6 +1,6 @@
 import client from "./client";
 
-const USER_BASE = "/user";
+const USER_BASE = "/admin";
 
 // Login API (cookie-based auth)
 export const loginUser = async (credentials) => {
