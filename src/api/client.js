@@ -10,31 +10,13 @@ const client = axios.create({
   withCredentials: true,
 });
 
-// Add request interceptor to include JWT token if available
-client.interceptors.request.use(
-  (config) => {
-    // Check for JWT token in localStorage
-    const token = localStorage.getItem('access_token') || localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-// Add response interceptor to handle token expiration
+// Add response interceptor to handle authentication errors
 client.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid, clear it
-      localStorage.removeItem('access_token');
-      localStorage.removeItem('token');
-      // Optionally redirect to login
-      // window.location.href = '/user/login';
+      // Authentication failed, redirect to login
+      window.location.href = '/login';
     }
     return Promise.reject(error);
   }

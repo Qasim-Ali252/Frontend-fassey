@@ -7,15 +7,15 @@ const Sidebar = () => {
 
   const menu = [
     { to: "/admin", label: "Dashboard", icon: "🏠" },
-    { to: "/products", label: "Products", icon: "👖" },
-    { to: "/products/add", label: "Add Product", icon: "➕" },
-    { to: "/products/categories", label: "Categories", icon: "🗂️" },
-    { to: "/orders", label: "Orders", icon: "🧾" },
-    { to: "/customers", label: "Customers", icon: "👥" },
-    // { to: "/inventory", label: "Inventory", icon: "📦" },
-    // { to: "/banners", label: "Banners", icon: "🖼️" },
-    // { to: "/messages", label: "Messages", icon: "✉️" },
-    { to: "/settings", label: "Settings", icon: "⚙️" },
+    { to: "/admin/products", label: "Products", icon: "👖" },
+    { to: "/admin/products/add", label: "Add Product", icon: "➕" },
+    { to: "/admin/products/categories", label: "Categories", icon: "🗂️" },
+    { to: "/admin/orders", label: "Orders", icon: "🧾" },
+    { to: "/admin/customers", label: "Customers", icon: "👥" },
+    // { to: "/admin/inventory", label: "Inventory", icon: "📦" },
+    // { to: "/admin/banners", label: "Banners", icon: "🖼️" },
+    // { to: "/admin/messages", label: "Messages", icon: "✉️" },
+    { to: "/admin/settings", label: "Settings", icon: "⚙️" },
     { to: "/logout", label: "Logout", icon: "🚪" },
   ];
 
