@@ -44,6 +44,7 @@ import OrderDetails from "./shop/pages/OrderDetails";
 import Profile from "./shop/pages/Profile"; 
 import SearchResultsPage from "./shop/pages/SearchResultsPage"; 
 
+
 // Optimized Query Client Configuration
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -1,0 +1,105 @@
+/* src/styles/AboutPage.css */
+
+.about-page-wrapper {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 40px;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* Header */
+.about-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.brand-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.about-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 15px 0;
+    letter-spacing: -0.04em;
+}
+
+.header-line {
+    width: 50px;
+    height: 1px;
+    background: #111;
+    margin: 30px auto;
+}
+
+/* Content Grid */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.content-block h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.content-block p {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Integrity Cards (The replacement for boxes) */
+.integrity-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.integrity-card {
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.integrity-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.integrity-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Footer CTA */
+.about-footer {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 80px;
+}
+
+.about-footer p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content-grid, .integrity-section {
+        grid-template-columns: 1fr;
+    }
+    .about-page-wrapper { padding: 0 25px; margin: 60px auto; }
+}
